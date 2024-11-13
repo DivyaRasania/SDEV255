@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style type="text/css">
+      .shrink-leave-to {
+        font-size: 0px;
+      }
+      .shrink-leave-active {
+        transition: all 2s;
+      }
+      .shrink-enter-from {
+        font-size: 0px;
+      }
+      .shrink-enter-active {
+        transition: all 2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+
+  <script>
+    var app = Vue.createApp({
+      data() {
+        return {
+          show: true,
+        };
+      },
+      template: `
+        <button @click="show=!show">Produce the 
+        effect</button>
+        <transition name="shrink">
+          <p v-if="show">
+            Paragraph 1
+          </p>
+        </transition>   
+      `,
+    });
+
+    var vm = app.mount("div#app");
+  </script>
+</html>

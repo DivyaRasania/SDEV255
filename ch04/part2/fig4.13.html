@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style type="text/css">
+      .ymove-leave-to {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      .ymove-leave-active {
+        transition: all 0.5s;
+      }
+      .ymove-enter-from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      .ymove-enter-active {
+        transition: all 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+
+  <script>
+    var app = Vue.createApp({
+      data() {
+        return {
+          show: true,
+        };
+      },
+      template: `
+        <button @click="show=!show">Produce the 
+        effect</button>
+        <transition name="ymove">
+          <p v-if="show">
+            Paragraph 1
+          </p>
+        </transition>   
+      `,
+    });
+
+    var vm = app.mount("div#app");
+  </script>
+</html>

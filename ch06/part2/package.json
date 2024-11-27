@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "node test3.js"
+  },
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}

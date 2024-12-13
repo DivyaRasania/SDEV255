@@ -18,6 +18,12 @@
 				"mongodb.mongodb-vscode"
 			]
 		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers-extra/features/express-generator:2": {},
+		"ghcr.io/devcontainers-extra/features/mongosh-homebrew:1": {},
+		"ghcr.io/devcontainers-extra/features/vue-cli:2": {}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

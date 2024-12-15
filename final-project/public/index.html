@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h1>Task List</h1>
+        <div>
+            <input v-model="newTaskTitle" placeholder="Task Title" />
+            <input v-model="newTaskDescription" placeholder="Task Description" />
+            <input v-model="newDateAssigned" type="date" placeholder="Date Assigned" />
+            <button @click="addTask">Add Task</button>
+        </div>
+        <ul>
+            <li v-for="(element, index) in elements" :key="index">
+                <div>
+                    <span>{{ element.text }}</span>
+                    <span>{{ element.task }}</span>
+                    <span>{{ element.dateA }}</span>
+                </div>
+                <div>
+                    <button @click="modifyTaskTitle(element)">Modify Title</button>
+                    <button @click="modifyTaskDescription(element)">Modify Description</button>
+                    <button @click="modifyDateAssigned(element)">Modify Date</button>
+                    <button @click="removeTask(element)">Remove</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+<script type="module">
+    import GlobalApp from "./global-app.js";
+
+    var app = Vue.createApp({
+        components: {
+            GlobalApp: GlobalApp
+        },
+        template: "<GlobalApp />"
+    });
+
+    var vm = app.mount("div#app");
+</script>
+
+</html>
